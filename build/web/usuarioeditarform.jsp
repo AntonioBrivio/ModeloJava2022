@@ -1,4 +1,4 @@
-<%@ page import="dao.Dao, dao.usuariosDao, classes.Usuario, java.util.*"%>
+<%@ page import="dao.Dao, dao.UsuariosDao, classes.Usuario, java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
     <body>
         <%
             String id = request.getParameter("id");
-            Usuario usuario = usuariosDao.getUsuarioById(Integer.parseInt(id));
+            Usuario usuario = UsuariosDao.getUsuarioById(Integer.parseInt(id));
         %>
         <form action="usuarioeditar.jsp" method="post">
             <h3>Editar Usuário Id: <%=usuario.getId()%></h3>

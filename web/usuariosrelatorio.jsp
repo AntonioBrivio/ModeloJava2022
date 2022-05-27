@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="dao.Dao, dao.usuariosDao, classes.Usuario, java.util.*"%>
+<%@ page import="dao.Dao, dao.UsuariosDao, classes.Usuario, java.util.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,10 +16,10 @@
             <div class="content">        
             <%
                 
-                List<Usuario> list = usuariosDao.getRelatorio();
+                List<Usuario> list = UsuariosDao.getRelatorio();
                 request.setAttribute("list", list);
                
-                int[] valores = usuariosDao.getRelatorioUsuarios();
+                int[] valores = UsuariosDao.getRelatorioUsuarios();
                 request.setAttribute("valores", valores);
                 
 

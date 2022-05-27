@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author aluno
  */
-public class usuariosDao {
+public class UsuariosDao {
         public static Usuario getUsuarioById(int id){
         Usuario usuario = null;      
     try{
@@ -115,7 +115,7 @@ public class usuariosDao {
     
         public static int[] getRelatorioUsuarios() {
 
-int[] valores = {10, 20, 30, 40};
+        int[] valores = {0, 0};
         
         try{
             Connection con = getConnection();

@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="dao.Dao, dao.usuariosDao, classes.Usuario, java.util.*"%>
+<%@ page import="dao.Dao, dao.UsuariosDao, classes.Usuario, java.util.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,10 +26,10 @@
                     id = id * total + 1;
                 }
                 
-                List<Usuario> list = usuariosDao.getUsuarios(id,total);
+                List<Usuario> list = UsuariosDao.getUsuarios(id,total);
                 request.setAttribute("list", list);
                 
-                int contagem = usuariosDao.getContagem();
+                int contagem = UsuariosDao.getContagem();
                 int i;
                 request.setAttribute("contagem", contagem);
                 if(contagem%total==0){

@@ -79,7 +79,7 @@ li.dropdown {
 <body>
 <ul>
   <li><a href="index.jsp">Principal</a></li>
-  <li><a href="#news">Pedido</a></li>
+  <li><a href="turmascontrolar.jsp">Turmas</a></li>
 
 <li class='dropdown'><a href='javascript:void(0)' class='dropbtn'>Usuários</a>
 <div class='dropdown-content'><a href='usuariosrelatorio.jsp'>Relatório de Usuários</a><a href='usuarioscontrolar.jsp?pag=1'>Controlar Usuários</a><a href='usuariocadastrarform.html'>Cadastrar Usuário</a></div></li>
