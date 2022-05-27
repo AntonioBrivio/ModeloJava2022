@@ -1,10 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="dao.Dao, classes.Usuario, java.util.*"%>
+<%@ page import="dao.Dao, dao.usuariosDao, classes.Usuario, java.util.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="./css/tabela.css">
+        <link href="css/grafico.css" rel="stylesheet" type="text/css"/>
+
         <title>Lista de Usuários</title>
     </head>
     <body>
@@ -24,17 +26,18 @@
                     id = id * total + 1;
                 }
                 
-                List<Usuario> list = Dao.getUsuarios(id,total);
+                List<Usuario> list = usuariosDao.getUsuarios(id,total);
                 request.setAttribute("list", list);
                 
-                int contagem = Dao.getContagem();
+                int contagem = usuariosDao.getContagem();
                 int i;
                 request.setAttribute("contagem", contagem);
-if(contagem%total==0){
-    contagem=contagem/total;
-}else{
-    contagem=contagem/total + 1;    
-}
+                if(contagem%total==0){
+                    contagem=contagem/total;
+                }else{
+                    contagem=contagem/total + 1;    
+                }
+
             %>
         
             <h1>Lista de Usuários</h1>
@@ -52,13 +55,15 @@ if(contagem%total==0){
                 </tr>
                 </c:forEach>
             </table>
-<div class="pagination">
-    <% for(i=1; i <= contagem; i++) {%>
-            <a href="usuarioscontrolar.jsp?pag=<%=i%>"><%=i%></a>
-    <% } %>   
-</div>  
+                <div class="pagination">
+                    <% for(i=1; i <= contagem; i++) {%>
+                            <a href="usuarioscontrolar.jsp?pag=<%=i%>"><%=i%></a>
+                    <% } %>   
+                </div>  
             <a href="usuariocadastrarform.html"><img src="./imagens/incluir.png" alt="Incluir Usuário"></a>
+          
     </div>
+
     <div class="footer">
         <%@include file="rodape.jsp"%>
     </div>
