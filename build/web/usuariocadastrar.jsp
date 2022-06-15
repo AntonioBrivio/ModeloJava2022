@@ -2,7 +2,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="u" class="classes.Usuario"></jsp:useBean>
 <jsp:setProperty property="*" name="u" />
-    
+
+<%@include file="acessoadm.jsp"%>
+
 <%
     int i = UsuariosDao.cadastrarUsuario(u);
     

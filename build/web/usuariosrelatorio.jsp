@@ -6,10 +6,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="./css/tabela.css">
         <link href="css/grafico.css" rel="stylesheet" type="text/css"/>
-
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+        <link href="css/padrao.css" rel="stylesheet" type="text/css"/>
         <title>Relatório de Usuários</title>
     </head>
     <body>
+        
+            <%@include file="acessoadm.jsp"%>
+        
             <div class="topnav">
                 <%@include file="menu.jsp"%>
             </div>

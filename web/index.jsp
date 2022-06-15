@@ -1,27 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-<title>Java Web</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.svg" />
-
+<title>Login</title>
+<meta charset="UTF-8">
+<link href="css/form.css" rel="stylesheet" type="text/css"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.svg" />   
 </head>
 <body>
-
-<div class="topnav">
-    <%@include file="menu.jsp"%>
-</div>
-
-<div class="content">
-  <h3>"As coisas não acontecem como a gente quer, nem mesmo como a gente não quer. As coisas nunca pedem a nossa opinião."</h3>
-
-</div>
-
-<div class="footer">
-    <%@include file="rodape.jsp"%>
-</div>
-
+	<form action="login.jsp" method="post">
+		<h3>Login</h3>
+		<input type="text" name="email" placeholder="Seu e-mail..." required>
+		<input type="password" name="senha" placeholder="Sua senha..." required>
+		<input type="submit" value="Entrar">
+	</form>
 </body>
 </html>
-

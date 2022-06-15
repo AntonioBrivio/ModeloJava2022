@@ -4,10 +4,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="./css/estilo.css">
+<link href="css/form.css" rel="stylesheet" type="text/css"/>
         <title>Editar Usuário</title>
     </head>
     <body>
+        
+        <%@include file="acessoadm.jsp"%>
+        
         <%
             String id = request.getParameter("id");
             Usuario usuario = UsuariosDao.getUsuarioById(Integer.parseInt(id));

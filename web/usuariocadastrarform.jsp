@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="./css/estilo.css">
 </head>
 <body>
+    
+        <%@include file="acessoadm.jsp"%>
+    
 	<form action="usuariocadastrar.jsp" method="post">
 	<h3>Cadastrar Usuários</h3>
 	<input type="text" name="nome" placeholder="Seu nome..." required>		

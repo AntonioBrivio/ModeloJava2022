@@ -170,4 +170,26 @@ public class UsuariosDao {
        return status;
    }
     
+public static Usuario logar(String email, String senha){ 
+Usuario usuario = new Usuario();    
+    try{
+        Connection con = getConnection();
+        PreparedStatement ps = (PreparedStatement) con.prepareStatement("select * from usuarios where Email=?");
+        ps.setString(1, email);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()){
+            if(rs.getString("senha").equals(senha)){
+                usuario.setId(rs.getInt("id"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));         
+                usuario.setSenha(rs.getString("senha"));   
+                usuario.setAcesso(rs.getString("acesso")); 
+            }
+        }
+    }catch(Exception erro){
+        System.out.println(erro);
+    }      
+        return usuario;
+    }
+   
 }
