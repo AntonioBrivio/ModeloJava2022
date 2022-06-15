@@ -58,5 +58,20 @@ public class TurmasDao {
     }
     return list;
     }
+        
+        
+public static int cadastrarTurma(int turma_numero, int curso_id){
+       int status = 0;  
+   try{
+        Connection con = getConnection();
+        PreparedStatement ps = (PreparedStatement) con.prepareStatement("INSERT INTO TURMAS(NUMERO,CURSO_ID) VALUES(?,?)");
+        ps.setInt(1, turma_numero);
+        ps.setInt(2, curso_id);        
+        status = ps.executeUpdate();
+    }catch(Exception erro){
+        System.out.println(erro);
+    }      
+       return status;
+   }        
 
 }

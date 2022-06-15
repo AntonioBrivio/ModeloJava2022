@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/web/turmacadastrar.jsp</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/web/usuarioscontrolar.jsp</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/src/java/dao/TurmasDao.java</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/src/java/classes/Curso.java</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/src/java/dao/CursosDao.java</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/web/turmacadastrarform.jsp</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/web/usuariocadastrar.jsp</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/src/java/dao/UsuariosDao.java</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/src/java/classes/Turma.java</file>
+            <file>file:/F:/15-06/JavaWeb_v1_4_1_certo/JavaWeb/web/turmascontrolar.jsp</file>
+        </group>
     </open-files>
 </project-private>
