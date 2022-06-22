@@ -181,7 +181,7 @@ public class UsuariosDao {
        int status = 0;  
    try{
         Connection con = getConnection();
-        PreparedStatement ps = (PreparedStatement) con.prepareStatement("INSERT INTO USUARIOS(NOME,EMAIL,SENHA,ACESSO) VALUES(?,?,?,?)");
+        PreparedStatement ps = (PreparedStatement) con.prepareStatement("INSERT INTO USUARIOS(NOME,EMAIL,SENHA,ACESSO,STATUS) VALUES(?,?,?,?,'ativo')");
         ps.setString(1, usuario.getNome());
         ps.setString(2, usuario.getEmail());
         ps.setString(3, usuario.getSenha());        
@@ -200,20 +200,26 @@ Usuario usuario = new Usuario();
         PreparedStatement ps = (PreparedStatement) con.prepareStatement("select * from usuarios where Email=?");
         ps.setString(1, email);
         ResultSet rs = ps.executeQuery();
-        while(rs.next()){
-            if(rs.getString("status").equals("ativo")){
-                if(rs.getString("senha").equals(senha)){
-                    usuario.setId(rs.getInt("id"));
-                    usuario.setNome(rs.getString("nome"));
-                    usuario.setEmail(rs.getString("email"));         
-                    usuario.setSenha(rs.getString("senha"));   
-                    usuario.setAcesso(rs.getString("acesso"));     
+        //Verifica se a consulta retornou resultado
+        if (rs.next()) {       
+                if(rs.getString("status").equals("ativo")){
+                    if(rs.getString("senha").equals(senha)){
+                        usuario.setId(rs.getInt("id"));
+                        usuario.setNome(rs.getString("nome"));
+                        usuario.setEmail(rs.getString("email"));         
+                        usuario.setSenha(rs.getString("senha"));   
+                        usuario.setAcesso(rs.getString("acesso"));     
+                    }else{
+                        //Senha errada
+                        usuario = null;
+                    }
                 }else{
-                    usuario = null;
+                   //Usuário Inativo
+                   usuario = null;     
                 }
-            }else{
-               usuario = null;     
-            }
+        }else{
+            // E-mail não existe
+            usuario = null; 
         }
     }catch(Exception erro){
         System.out.println(erro);
