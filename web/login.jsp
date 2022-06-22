@@ -12,5 +12,7 @@
         request.getSession().setAttribute("usuario", usuario.getNome());
         request.getSession().setAttribute("acesso", usuario.getAcesso());    
         response.sendRedirect("principal.jsp");
+    }else{
+        response.sendRedirect("index.jsp");
     }
 %>

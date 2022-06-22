@@ -45,7 +45,7 @@
         
             <h1>Lista de Usuários</h1>
             <table>
-            <tr><th>Id</th><th>Nome</th><th>Email</th><th>Senha</th><th>Acesso</th><th colspan="2">Ações</td></tr>
+            <tr><th>Id</th><th>Nome</th><th>Email</th><th>Senha</th><th>Acesso</th><th>Status</th><th colspan="3">Ações</td></tr>
                 <c:forEach items="${list}" var="usuario">
                 <tr>
                     <td>${usuario.getId()}</td>
@@ -53,7 +53,9 @@
                     <td>${usuario.getEmail()}</td>            
                     <td>${usuario.getSenha()}</td>    
                     <td>${usuario.getAcesso()}</td> 
+                    <td>${usuario.getStatus()}</td>
                     <td><a href="usuarioeditarform.jsp?id=${usuario.getId()}"><img src="./imagens/editar.png" alt="Editar Usuário"></a></td>
+                    <td><a href="usuariobloquear.jsp?id=${usuario.getId()}&status=${usuario.getStatus()}"><img src="./imagens/bloquear.png" alt="Bloquear Usuário"></a></td>
                     <td><a href="usuarioexcluir.jsp?id=${usuario.getId()}"><img src="./imagens/excluir.png" alt="Excluir Usuário"></a></td>            
                 </tr>
                 </c:forEach>

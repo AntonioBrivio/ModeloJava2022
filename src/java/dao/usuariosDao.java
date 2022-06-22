@@ -69,6 +69,7 @@ public class UsuariosDao {
             usuario.setEmail(rs.getString("email"));         
             usuario.setSenha(rs.getString("senha"));   
             usuario.setAcesso(rs.getString("acesso")); 
+            usuario.setStatus(rs.getString("status"));
             list.add(usuario);
         }       
     }catch(Exception erro){
@@ -153,6 +154,28 @@ public class UsuariosDao {
             return status;
    }
     
+
+    public static int bloquearUsuario(Usuario usuario){
+       int status = 0;  
+       String statusdousuario;
+       
+       if(usuario.getStatus().equals("ativo")){
+        statusdousuario = "inativo";   
+       }else{
+        statusdousuario = "ativo";   
+       }
+        try{
+             Connection con = getConnection();
+             PreparedStatement ps = (PreparedStatement) con.prepareStatement("UPDATE usuarios SET Status=? WHERE id=?");
+             ps.setString(1, statusdousuario);
+             ps.setInt(2, usuario.getId());         
+             status = ps.executeUpdate();
+         }catch(Exception erro){
+             System.out.println(erro);
+         }      
+            return status;
+   }
+
     
    public static int cadastrarUsuario(Usuario usuario){
        int status = 0;  
@@ -178,12 +201,18 @@ Usuario usuario = new Usuario();
         ps.setString(1, email);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
-            if(rs.getString("senha").equals(senha)){
-                usuario.setId(rs.getInt("id"));
-                usuario.setNome(rs.getString("nome"));
-                usuario.setEmail(rs.getString("email"));         
-                usuario.setSenha(rs.getString("senha"));   
-                usuario.setAcesso(rs.getString("acesso")); 
+            if(rs.getString("status").equals("ativo")){
+                if(rs.getString("senha").equals(senha)){
+                    usuario.setId(rs.getInt("id"));
+                    usuario.setNome(rs.getString("nome"));
+                    usuario.setEmail(rs.getString("email"));         
+                    usuario.setSenha(rs.getString("senha"));   
+                    usuario.setAcesso(rs.getString("acesso"));     
+                }else{
+                    usuario = null;
+                }
+            }else{
+               usuario = null;     
             }
         }
     }catch(Exception erro){

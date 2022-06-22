@@ -8,6 +8,7 @@
         <link href="css/grafico.css" rel="stylesheet" type="text/css"/>
         <link href="css/menu.css" rel="stylesheet" type="text/css"/>
         <link href="css/padrao.css" rel="stylesheet" type="text/css"/>
+        <script src="./scripts/filtrar.js"></script>
         <title>Relatório de Usuários</title>
     </head>
     <body>
@@ -30,7 +31,11 @@
             %>
         
             <h1>Relatório de Usuários</h1>
-            <table>
+            
+            		<input type="text" id="filtrarnomes" onkeyup="filtrar('filtrarnomes', 1)" placeholder="Busca de nomes">
+			<input type="text" id="filtraremails" onkeyup="filtrar('filtraremails', 2)" placeholder="Busca de emails">
+
+            <table id="myTable">
             <tr><th>Id</th><th>Nome</th><th>Email</th><th>Acesso</th></tr>
                 <c:forEach items="${list}" var="usuario">
                 <tr>
