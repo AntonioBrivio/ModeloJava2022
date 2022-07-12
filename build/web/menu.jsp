@@ -5,7 +5,7 @@
 <ul>
   <li><a href="principal.jsp">Principal</a></li>
   <li><a href="turmascontrolar.jsp">Turmas</a></li>
-
+  <li><a href="eventoscontrolar.html">Eventos</a></li>
     <%
       String adm = (String) request.getSession().getAttribute("acesso");
  

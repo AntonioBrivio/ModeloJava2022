@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/web/principal.jsp</file>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/web/usuariocadastrar.jsp</file>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/src/java/dao/UsuariosDao.java</file>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/web/acessocomum.jsp</file>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/web/login.jsp</file>
-            <file>file:/C:/Users/aluno/Desktop/JavaWeb_v1_4_3/JavaWeb/web/acessoadm.jsp</file>
+            <file>file:/D:/Brivio/JavaWeb_v1_4_3_fim/JavaWeb/web/eventoslistar.jsp</file>
+            <file>file:/D:/Brivio/JavaWeb_v1_4_3_fim/JavaWeb/web/scripts/agenda.js</file>
+            <file>file:/D:/Brivio/JavaWeb_v1_4_3_fim/JavaWeb/src/java/dao/EventosDao.java</file>
         </group>
     </open-files>
 </project-private>
